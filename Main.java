@@ -7,21 +7,24 @@ public class Main {
 
     public static void main(String[] args) {
 
-        TaskStorage storage = new TaskStorage();
+        TaskStorage storage = createStorage();
 
-        Task task1 = new Task("Do Something");
-        Task task2 = new Task("TaskPageActivity 2", "Description 2");
-        Task task3 = new Task("TaskPageActivity 3", "Description 3");
-
-        storage.add(task1);
-        storage.add(task2);
-        storage.add(task3);
+        storage.createTask("Do Something");
+        storage.createTask("Task 2", "Description 2");
+        storage.createTask("Task 3", "Description 3");
 
         storage.get(0).setDescription("Easy");
-
-        task1.setStatus(Task.Status.DONE);
+        storage.get(0).setStatus(Task.Status.DONE);
 
         Activity tasksList = new TasksListActivity(storage);
+        tasksList.show();
+
+    }
+
+    private static TaskStorage createStorage() {
+
+        return new TaskStorage();
+
     }
 
 }

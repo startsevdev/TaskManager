@@ -14,7 +14,5 @@ public class TaskCreateActivity {
         public void show() {
             System.out.println("Input task's description");
         }
-
     }
-
 }

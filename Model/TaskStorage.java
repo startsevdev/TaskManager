@@ -10,16 +10,30 @@ public class TaskStorage {
     private ConsoleView view = new ConsoleView();
     private ArrayList<Task> tasks = new ArrayList<>();
 
-    public void add(Task task) {
+    public Task createTask(String name) {
+
+        Task task = new Task(name);
         tasks.add(task);
+
+        return task;
+
+    }
+
+    public Task createTask(String name, String description) {
+
+        Task task = new Task(name, description);
+        tasks.add(task);
+
+        return task;
+
     }
 
     public Task get(int index) {
         return (Task) tasks.get(index);
     }
 
-    public void remove(int index) {
-        tasks.remove(index);
+    public Task remove(int index) {
+        return tasks.remove(index);
     }
 
     public void show() {
