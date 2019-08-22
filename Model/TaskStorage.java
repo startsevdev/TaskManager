@@ -1,8 +1,7 @@
 package Model;
 
-import View.ConsoleView;
-
 import java.util.ArrayList;
+import View.ConsoleView;
 
 
 public class TaskStorage {
@@ -11,21 +10,17 @@ public class TaskStorage {
     private ArrayList<Task> tasks = new ArrayList<>();
 
     public Task createTask(String name) {
-
         Task task = new Task(name);
         tasks.add(task);
 
         return task;
-
     }
 
     public Task createTask(String name, String description) {
-
         Task task = new Task(name, description);
         tasks.add(task);
 
         return task;
-
     }
 
     public Task get(int index) {
@@ -37,7 +32,7 @@ public class TaskStorage {
     }
 
     public void show() {
-        view.showTasks(tasks);
+        view.showTasks(this);
     }
 
     public ArrayList<Task> getTasks() {

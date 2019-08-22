@@ -1,34 +1,38 @@
 package View;
 
 import Model.Task;
-
-import java.util.ArrayList;
+import Model.TaskStorage;
 
 public class ConsoleView {
 
-    private String LINE = "--------------------";
+    public void printLine() {
+        System.out.println("------------------------------");
+    }
 
     public void showTask(Task task) {
-        System.out.println("Title: " + task.getTitle() + "    " + "Status: " + task.getStatus() + "\n");
-        System.out.println("Description: \n" + task.getDescription() + "\n");
+        printLine();
+        System.out.println("TASK\n");
+        System.out.println("Status: " + task.getStatus());
+        System.out.println("Title: " + task.getTitle());
+        System.out.println("Description: " + task.getDescription() + "\n");
     }
 
-    public void showTasks(ArrayList tasks) {
-        System.out.println(LINE);
+    public void showTasks(TaskStorage storage) {
+        printLine();
 
-        for(Object task : tasks) {
-
+        for(Object task : storage.getTasks()) {
             showTask((Task) task);
-            System.out.println(LINE);
+            printLine();
         }
     }
 
-    public void showTaskList(ArrayList<Task> tasks) {
-        for(int i = 0; i < tasks.size(); i++) {
-
-            Task task = tasks.get(i);
-
+    public void showTaskList(TaskStorage storage) {
+        printLine();
+        System.out.println("YOUR TASKS\n");
+        for(int i = 0; i < storage.getTasks().size(); i++) {
+            Task task = storage.getTasks().get(i);
             System.out.println(i + 1 + ") " + task.getTitle() + "    " + task.getStatus());
         }
+        System.out.println();
     }
 }
