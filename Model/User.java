@@ -11,9 +11,10 @@ public class User {
     private State editDescription;
 
     private State state;
-    private Integer taskIndex;
+    private String taskDescription;
     private TaskStorage storage;
     private Task task;
+    private Integer taskIndex;
 
     public User(TaskStorage taskStorage) {
 

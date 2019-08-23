@@ -1,5 +1,6 @@
 package Controller.States;
 
+import Model.Task;
 import Model.User;
 
 public class TaskPage extends State {
@@ -15,7 +16,18 @@ public class TaskPage extends State {
     }
 
     public void inputNumber(Integer number) {
-        System.out.println("Error");
+        if (number == 0) {
+            user.getTask().setStatus(Task.Status.TO_DO);
+        }
+        else if (number == 1) {
+            user.getTask().setStatus(Task.Status.IN_PROGRESS);
+        }
+        else if (number == 2) {
+            user.getTask().setStatus(Task.Status.DONE);
+        }
+        else {
+            System.out.println("Error");
+        }
     }
 
     public void inputC() {
@@ -37,6 +49,10 @@ public class TaskPage extends State {
 
     public void inputD() {
         user.setState(user.getEditDescription());
+    }
+
+    public void inputP() {
+        user.getTask().setStatus(Task.Status.IN_PROGRESS);
     }
 
     public void inputText(String text) {

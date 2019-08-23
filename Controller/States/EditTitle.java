@@ -22,6 +22,10 @@ public class EditTitle extends State {
         user.setState(user.getTaskPage());
     }
 
+    public void inputP() {
+        System.out.println("Error");
+    }
+
     public void inputNumber(Integer number) {
         System.out.println("Error");
     }

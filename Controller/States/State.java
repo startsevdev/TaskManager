@@ -4,7 +4,7 @@ import View.ConsoleView;
 
 public abstract class State {
 
-    public ConsoleView view = new ConsoleView();
+    ConsoleView view = new ConsoleView();
 
     public abstract void inputNumber(Integer number);
     public abstract void inputText(String text);

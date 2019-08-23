@@ -24,8 +24,12 @@ public class TaskStorage {
     }
 
     public Task get(int index) {
-        return (Task) tasks.get(index);
+        return tasks.get(index);
     }
+
+    public Task getLast() {return tasks.get(tasks.size() - 1);}
+
+    public Integer getSize() {return tasks.size();}
 
     public Task remove(int index) {
         return tasks.remove(index);

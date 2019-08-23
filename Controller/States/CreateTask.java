@@ -1,5 +1,6 @@
 package Controller.States;
 
+import Model.Task;
 import Model.User;
 
 public class CreateTask extends State {
@@ -27,7 +28,7 @@ public class CreateTask extends State {
     }
 
     public void show() {
-        System.out.println("Create task");
+        System.out.println("CREATING NEW TASK. INPUT TITLE\n");
     }
 
     public void inputT() {
@@ -38,8 +39,17 @@ public class CreateTask extends State {
         System.out.println("Error");
     }
 
-    public void inputText(String text) {
+    public void inputP() {
         System.out.println("Error");
+    }
+
+    public void inputText(String text) {
+        user.getStorage().createTask(text);
+
+        user.setTask(user.getStorage().getLast());
+        user.setTaskIndex(user.getStorage().getSize() - 1);
+
+        user.setState(user.getEditDescription());
     }
 
 }

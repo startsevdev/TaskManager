@@ -38,6 +38,10 @@ public class TaskList extends State {
         System.out.println("Error");
     }
 
+    public void inputP() {
+        System.out.println("Error");
+    }
+
     public void inputText(String text) {
         System.out.println("Error");
     }

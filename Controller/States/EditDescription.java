@@ -30,6 +30,10 @@ public class EditDescription extends State {
         System.out.println("Error");
     }
 
+    public void inputP() {
+        System.out.println("Error");
+    }
+
     public void inputNumber(Integer number) {
         System.out.println("Error");
     }
