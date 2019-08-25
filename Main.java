@@ -11,7 +11,7 @@ public class Main {
         storage.createTask("Task 2", "Description 2");
         storage.createTask("Task 3", "Description 3");
 
-        Cycle cycle = new Cycle(storage);
+        Cycle cycle = new Cycle();
         cycle.run();
 
     }

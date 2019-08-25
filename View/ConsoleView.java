@@ -6,7 +6,7 @@ import Model.TaskStorage;
 public class ConsoleView {
 
     public void printLine() {
-        System.out.println("------------------------------");
+        System.out.println("-----------------------------------");
     }
 
     public void showTask(Task task) {

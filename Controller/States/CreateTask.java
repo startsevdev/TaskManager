@@ -28,6 +28,7 @@ public class CreateTask extends State {
     }
 
     public void show() {
+        view.printLine();
         System.out.println("CREATING NEW TASK. INPUT TITLE\n");
     }
 
@@ -44,9 +45,9 @@ public class CreateTask extends State {
     }
 
     public void inputText(String text) {
-        user.getStorage().createTask(text);
+        Task task = user.getStorage().createTask(text);
 
-        user.setTask(user.getStorage().getLast());
+        user.setTask(task);
         user.setTaskIndex(user.getStorage().getSize() - 1);
 
         user.setState(user.getEditDescription());

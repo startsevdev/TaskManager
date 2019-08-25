@@ -1,5 +1,7 @@
 package Controller.States;
 
+import Model.Exceptions.InvalidTaskNumberException;
+import Model.Exceptions.EmptyStorageException;
 import Model.User;
 
 public class TaskList extends State {
@@ -15,9 +17,19 @@ public class TaskList extends State {
     }
 
     public void inputNumber(Integer number) {
-        user.setState(user.getTaskPage());
-        user.setTaskIndex(number - 1);
-        user.setTask(user.getStorage().get(number - 1));
+        try {
+            checkTaskIndex(number);
+
+            user.setState(user.getTaskPage());
+            user.setTaskIndex(number - 1);
+            user.setTask(user.getStorage().get(number - 1));
+        }
+        catch (EmptyStorageException e) {
+            System.out.println(e.getMessage());
+        }
+        catch (InvalidTaskNumberException e) {
+            System.out.println(e.getMessage());
+        }
     }
 
     public void inputC() {
@@ -28,7 +40,9 @@ public class TaskList extends State {
         System.out.println("Error");
     }
 
-    public void inputB() { }
+    public void inputB() {
+        System.out.println("Error");
+    }
 
     public void inputT() {
         System.out.println("Error");
@@ -44,6 +58,15 @@ public class TaskList extends State {
 
     public void inputText(String text) {
         System.out.println("Error");
+    }
+
+    private void checkTaskIndex(Integer index) throws InvalidTaskNumberException, EmptyStorageException {
+        if (user.getStorage().getSize() == 0) {
+            throw new EmptyStorageException();
+        }
+        else if (index > user.getStorage().getSize() || index < 1) {
+            throw new InvalidTaskNumberException();
+        }
     }
 
 }

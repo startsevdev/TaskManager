@@ -10,7 +10,7 @@ public class Input {
 
     private Scanner scanner = new Scanner(System.in);
 
-    public Input() {
+    Input() {
         string = this.get();
         isInteger = isInteger(string);
     }
