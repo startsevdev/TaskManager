@@ -9,9 +9,9 @@ public class User {
     private State taskPage;
     private State editTitle;
     private State editDescription;
+    private State helpPage;
 
     private State state;
-    private String taskDescription;
     private TaskStorage storage;
     private Task task;
     private Integer taskIndex;
@@ -23,6 +23,7 @@ public class User {
         createTask = new CreateTask(this);
         editTitle = new EditTitle(this);
         editDescription = new EditDescription(this);
+        helpPage = new HelpPage(this);
 
         storage = taskStorage;
         taskIndex = null;
@@ -77,5 +78,9 @@ public class User {
 
     public State getEditDescription() {
         return editDescription;
+    }
+
+    public State getHelpPage() {
+        return helpPage;
     }
 }

@@ -52,8 +52,8 @@ public class TaskList extends State {
         System.out.println("Error");
     }
 
-    public void inputP() {
-        System.out.println("Error");
+    public void inputH() {
+        user.setState(user.getHelpPage());
     }
 
     public void inputText(String text) {

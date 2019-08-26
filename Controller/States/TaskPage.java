@@ -51,8 +51,8 @@ public class TaskPage extends State {
         user.setState(user.getEditDescription());
     }
 
-    public void inputP() {
-        user.getTask().setStatus(Task.Status.IN_PROGRESS);
+    public void inputH() {
+        user.setState(user.getHelpPage());
     }
 
     public void inputText(String text) {

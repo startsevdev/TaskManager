@@ -1,6 +1,7 @@
 package Controller.States;
 
 import Model.User;
+import View.ConsoleView;
 
 public class EditTitle extends State {
 
@@ -22,8 +23,8 @@ public class EditTitle extends State {
         user.setState(user.getTaskPage());
     }
 
-    public void inputP() {
-        System.out.println("Error");
+    public void inputH() {
+        inputText("h");
     }
 
     public void inputNumber(Integer number) {
@@ -36,7 +37,7 @@ public class EditTitle extends State {
     }
 
     public void show() {
-        view.printLine();
+        ConsoleView.printLine();
         System.out.println("INPUT TITLE\n");
     }
 

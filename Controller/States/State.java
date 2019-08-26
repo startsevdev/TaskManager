@@ -13,6 +13,7 @@ public abstract class State {
     public abstract void inputB();
     public abstract void inputT();
     public abstract void inputD();
+    public abstract void inputH();
     public abstract void show();
 
 }

@@ -2,6 +2,7 @@ package Controller.States;
 
 import Model.Task;
 import Model.User;
+import View.ConsoleView;
 
 public class CreateTask extends State {
 
@@ -28,7 +29,7 @@ public class CreateTask extends State {
     }
 
     public void show() {
-        view.printLine();
+        ConsoleView.printLine();
         System.out.println("CREATING NEW TASK. INPUT TITLE\n");
     }
 
@@ -40,8 +41,8 @@ public class CreateTask extends State {
         System.out.println("Error");
     }
 
-    public void inputP() {
-        System.out.println("Error");
+    public void inputH() {
+        inputText("h");
     }
 
     public void inputText(String text) {

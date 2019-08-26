@@ -5,8 +5,8 @@ import Model.TaskStorage;
 
 public class ConsoleView {
 
-    public void printLine() {
-        System.out.println("-----------------------------------");
+    public static void printLine() {
+        System.out.println("-------------------------------------------------------------------------------------------");
     }
 
     public void showTask(Task task) {
@@ -34,5 +34,20 @@ public class ConsoleView {
             System.out.println(i + 1 + ") " + task.getTitle() + "    " + task.getStatus());
         }
         System.out.println();
+    }
+
+    public static void showHelp() {
+        printLine();
+        System.out.println(
+                "COMMANDS\n\n" +
+                        "c – create task\n" +
+                        "r - remove task\n" +
+                        "t - edit task's title\n" +
+                        "d - edit task's description\n" +
+                        "b - return to the tasks list\n" +
+                        "[number] in tasks list - go to task's page\n" +
+                        "[number] in task's page - change status (0 - TO DO, 1 - IN PROGRESS, 2 - DONE)\n" +
+                        "h - this page\n"
+        );
     }
 }

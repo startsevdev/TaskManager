@@ -2,6 +2,7 @@ package Controller;
 
 import Model.TaskStorage;
 import Model.User;
+import View.ConsoleView;
 
 public class Cycle {
 
@@ -17,6 +18,8 @@ public class Cycle {
     }
 
     public void run() {
+
+        ConsoleView.showHelp();
 
         do {
             user.getState().show();
@@ -36,6 +39,9 @@ public class Cycle {
             }
             else if (input.getString().equals("d")) {
                 user.getState().inputD();
+            }
+            else if (input.getString().equals("h")) {
+                user.getState().inputH();
             }
             else if (input.isInteger()) {
                 user.getState().inputNumber(Integer.parseInt(input.getString()));

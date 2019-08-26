@@ -1,6 +1,7 @@
 package Controller.States;
 
 import Model.User;
+import View.ConsoleView;
 
 public class EditDescription extends State {
 
@@ -30,8 +31,8 @@ public class EditDescription extends State {
         System.out.println("Error");
     }
 
-    public void inputP() {
-        System.out.println("Error");
+    public void inputH() {
+        inputText("h");
     }
 
     public void inputNumber(Integer number) {
@@ -44,7 +45,7 @@ public class EditDescription extends State {
     }
 
     public void show() {
-        view.printLine();
+        ConsoleView.printLine();
         System.out.println("INPUT DESCRIPTION\n");
     }
 
